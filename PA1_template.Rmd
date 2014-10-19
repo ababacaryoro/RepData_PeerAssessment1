@@ -149,7 +149,7 @@ Also, comparing the two histograms, we remark that there is almost no change in 
 
 * To answer this question, we're going to create first a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
-```{r message =FALSE}
+```{r message =FALSE, warning=FALSE}
 db_impute$date = as.Date(db_impute$date)
 weekday = weekdays(db_impute$date)
 weekday[is.element(weekday, c("samedi","dimanche","saturday","sunday"))] = "weekend"
