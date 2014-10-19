@@ -244,6 +244,8 @@ print(paste(&quot;The median is &quot;, median, sep = &quot;: &quot;))
 <pre><code>## [1] &quot;The median is : 10765&quot;
 </code></pre>
 
+<p>The mean is 1.0766 &times; 10<sup>4</sup> and the median is 10765</p>
+
 <h2>What is the average daily activity pattern?</h2>
 
 <ul>
@@ -285,11 +287,10 @@ quite simple method. </p>
 <li>Before that, let&#39;s compute the total number of missing values in the dataset.</li>
 </ul>
 
-<pre><code class="r">sum(is.na(db$steps))
+<pre><code class="r">total = sum(is.na(db$steps))
 </code></pre>
 
-<pre><code>## [1] 2304
-</code></pre>
+<p>The total number of missing values is 2304.</p>
 
 <ul>
 <li>We replace the missing value by the mean for the corresponding 5-minute interval. By the same way, we create a new dataset that is equal to the original dataset but with the missing data filled in. This dataset is called db_impute.</li>
@@ -304,14 +305,11 @@ for (i in n) {
 
 <p>Let&#39;s check if our algorithm worked</p>
 
-<pre><code class="r">sum(is.na(db_impute$steps))
+<pre><code class="r">total2 = sum(is.na(db_impute$steps))
+# If the result is 0, that&#39;s ok :)
 </code></pre>
 
-<pre><code>## [1] 0
-</code></pre>
-
-<pre><code class="r"># If the result is 0, that&#39;s ok :)
-</code></pre>
+<p>Now, the total number of missing values is 0. </p>
 
 <p>Before doing any thing with the new dataset, let&#39;s reshape it with the previous technique</p>
 
@@ -347,6 +345,10 @@ print(paste(&quot;The new median is &quot;, median2, &quot;. But the previous wa
 
 <pre><code>## [1] &quot;The new median is : 10766.1886792453: . But the previous was : 10765&quot;
 </code></pre>
+
+<p>The new mean is 1.0766 &times; 10<sup>4</sup> and the previous was  1.0766 &times; 10<sup>4</sup>.</p>
+
+<p>The new mean is 1.0766 &times; 10<sup>4</sup> and the previous was  10765.</p>
 
 <p>We notice that the mean has definitely not changed. Only the median has slightly changed. </p>
 

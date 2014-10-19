@@ -55,6 +55,7 @@ print(paste("The median is ", median, sep = ": "))
 
 ```
 
+The mean is `r mean` and the median is `r median`
 ## What is the average daily activity pattern?
 
 * Time series plot  of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis).
@@ -88,8 +89,10 @@ quite simple method.
 * Before that, let's compute the total number of missing values in the dataset.
 
 ```{r }
-sum(is.na(db$steps))
+total = sum(is.na(db$steps))
 ```
+The total number of missing values is `r total`.
+
 * We replace the missing value by the mean for the corresponding 5-minute interval. By the same way, we create a new dataset that is equal to the original dataset but with the missing data filled in. This dataset is called db_impute.
 
 ```{r }
@@ -102,9 +105,11 @@ for (i in n) {
 Let's check if our algorithm worked
 
 ```{r }
-sum(is.na(db_impute$steps))
+total2 = sum(is.na(db_impute$steps))
 # If the result is 0, that's ok :)
 ```
+Now, the total number of missing values is `r total2`. 
+
 Before doing any thing with the new dataset, let's reshape it with the previous technique
 
 ```{r }
@@ -132,6 +137,9 @@ median2 = median(db_total3$steps)
 print(paste("The new median is ", median2, ". But the previous was ", median , sep = ": "))
 
 ```
+The new mean is `r mean2` and the previous was  `r mean`.
+
+The new mean is `r median2` and the previous was  `r median`.
 
 We notice that the mean has definitely not changed. Only the median has slightly changed. 
 
