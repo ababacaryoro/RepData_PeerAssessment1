@@ -43,7 +43,7 @@ plot1 = ggplot()+
   ggtitle("Histogram of the total number of steps taken each day ")
 plot1
 ```
-
+![Plot1](figure/unnamed-chunk-1.png) 
 * Mean and median total number of steps taken per day
 
 ```{r mean_median}
@@ -73,6 +73,7 @@ plot(db_mean2$interval, db_mean2$steps, type = "l", xlab="Interval", ylab="avera
 
 
 ```
+![Plot2](figure/unnamed-chunk-2.png) 
 * The 5-minute interval that contains, on average across all the days in the dataset, the maximum number of steps?
 
 For having that 5-minute interval, we use the code below
@@ -119,6 +120,7 @@ plot2 = ggplot()+
   ggtitle("Histogram of the total number of steps taken each day, after imputation ")
 plot2
 ```
+![Plot3](figure/unnamed-chunk-8.png) 
 
 Here is a comparison between the previous and new mean and median
 
@@ -155,6 +157,7 @@ db_impute = cbind(db_impute, weekday )
 xyplot(steps ~ interval | weekday, data = db_impute, layout = c(1,2), type="l",  xlab = "Interval", ylab = "Number of steps")
 
 ```
+![Plot4](figure/unnamed-chunk-10.png) 
 
 That's all for this "Peer Assessment 1" assignment. Hope that it has been done well, and that it will help other people that might need it :) .
 

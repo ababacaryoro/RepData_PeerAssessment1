@@ -44,7 +44,7 @@ plot1
 ```
 
 ![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-1.png) 
-
+![Plot1](figure/unnamed-chunk-1.png) 
 * Mean and median total number of steps taken per day
 
 
@@ -85,6 +85,7 @@ plot(db_mean2$interval, db_mean2$steps, type = "l", xlab="Interval", ylab="avera
 ```
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
+![Plot2](figure/unnamed-chunk-2.png) 
 * The 5-minute interval that contains, on average across all the days in the dataset, the maximum number of steps?
 
 For having that 5-minute interval, we use the code below
@@ -153,6 +154,7 @@ plot2
 ```
 
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 
+![Plot3](figure/unnamed-chunk-8.png) 
 
 Here is a comparison between the previous and new mean and median
 
@@ -210,6 +212,7 @@ xyplot(steps ~ interval | weekday, data = db_impute, layout = c(1,2), type="l", 
 ```
 
 ![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10.png) 
+![Plot4](figure/unnamed-chunk-10.png) 
 
 That's all for this "Peer Assessment 1" assignment. Hope that it has been done well, and that it will help other people that might need it :) .
 
