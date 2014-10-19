@@ -185,15 +185,8 @@ Also, comparing the two histograms, we remark that there is almost no change in 
 
 ```r
 db_impute$date = as.Date(db_impute$date)
-```
 
-```
-## Warning: unable to identify current timezone 'T':
-## please set environment variable 'TZ'
-## Warning: unknown timezone 'localtime'
-```
 
-```r
 weekday = weekdays(db_impute$date)
 weekday[is.element(weekday, c("samedi","dimanche","saturday","sunday"))] = "weekend"
 weekday[!is.element(weekday,c("weekend"))] = "weekday"
